@@ -10,7 +10,7 @@ st.sidebar.write("5.端侧模型")
 st.sidebar.write("6.无审查模型")
 st.sidebar.write("7.长序列模型")
 st.sidebar.write("8.模型部署")
-st.write("1.旗舰模型")
+st.subheader("1.旗舰模型", divider=True)
 st.write("旗舰模型参数量较大，运行成本较高但可完成的任务也较多。Deepseek v3算是的一个下一代模型，而其它厂商的下一代模型，包括Grok3和GPT5均未发布，因此Deepseek v3具有性能优势，也是第一个发布时性能超越所有闭源模型的开源模型，并且通过混合专家架构避免成本过高。以下是几个模型的对比")
 import pandas as pd
 df = pd.DataFrame({
@@ -44,7 +44,7 @@ df = pd.DataFrame({
 
 df
 
-st.write("2.多模态模型")
+st.subheader("2.多模态模型", divider=True)
 st.write("多模态模型开源处理图片。对于非思维链模型，闭源模型中Claude3.5 Sonnet表现最好，开源模型中Qwen2VL 72B表现最好。对于思维链模型，闭源模型中o1表现最好，开源模型中QvQ 72B Preview表现最好。以下是几个模型的对比")
 df2= pd.DataFrame({
     'Model': ['QvQ-72B-preview', 'OpenAI o1', 'GPT-4o', 'Cloude3.5 Sonnet', 'Qwen2-VL 72B'],
@@ -56,7 +56,7 @@ df2= pd.DataFrame({
 
 df2
 
-st.write("3.思维链模型")
+st.subheader("3.思维链模型", divider=True)
 st.write("思维链模型可以通过增加推理步骤来提高性能。目前最优秀的闭源思维链模型是OpenAI o1，最优秀的开源思维链模型是Qwq 32b preview，以下是几个模型的对比（由于不少模型不是同时测试，表中只保留了有较多模型进行的测试，另外使用非思维链模型中表现最好的Deepseek v3作为对照）")
 df3= pd.DataFrame({
      "Model": ["DeepSeek-R1-Lite-Preview","QwQ-32B-Preview","OpenAI o1","o1 mini","o3","o3 mini(high)","Deepseek v3"],
@@ -69,16 +69,16 @@ df3= pd.DataFrame({
 df3
 st.write("表中的OpenAI o3系列只开放了安全测试，还没有正式发布。o3 mini相比o1系列有性价比优势，o3在ARC AGI测试能达到人类水平，但成本高于人工，在EpochAI Frontier Math达到25.2%准确度。")
 
-st.write("4.小型化旗舰模型")
+st.subheader("4.小型化旗舰模型", divider=True)
 st.write("有几个系列的模型在有模型达到GPT4水平后开始小型化并保持性能，其中闭源模型主要有Gemini2.0 Flash和Yi Lighting，开源模型主要有phi4，14b参数量适合在PC部署。")
-st.write("5.端侧模型")
+st.subheader("5.端侧模型", divider=True)
 st.write("端侧模型用于手机或在PC后台运行，主要考虑7b和3b参数量，并且只能使用开源模型。考虑多语言后有优势的多模态模型有Qwen2 VL 7B和Megrez 3B Omni，单模态模型有Qwen2.5 7B和Qwen2.5 3B。")
-st.write("6.无审查模型")
+st.subheader("6.无审查模型", divider=True)
 st.write("比较新的模型大部分进行了对齐，可以避免生成不道德的内容，但在角色扮演等用途仍需要未对齐的模型，在写作中未对齐的模型也有更好的表现。")
 st.write("目前效果最好的无审查模型是旧版CommandR和CommandR+，官方版本是未对齐的。另外大部分常见模型有第三方的去对齐版本。")
-st.write("7.长序列模型")
+st.subheader("7.长序列模型", divider=True)
 st.write("处理或生成较长的文章需要支持较大输入或输出上下文长度的模型，考虑对api成本的影响，这类只讨论开源模型。目前比较好的开源长上下文模型是InternLM2.5 7b 1M和GLM4 9b 1M。长输出模型只有使用longwriter数据集微调的模型，目前只有GLM4 9b、Qwen2.5 7B和Llama3.1 8b。")
-st.write("8.模型部署")
+st.subheader("8.模型部署", divider=True)
 st.write("有多个运行框架可以部署LLM，我目前用的是Ollama。Ollama的优势是安装比较方便，还可以直接在命令行下载量化后的模型。")
 st.write("Ollama没有GUI但可以通过http请求或使用Python和Javascript等语言的库文件整或到应用中。我目前通过Chatbox使用Ollama的单模态模型和调用线上模型的api。调用Ollama的多模态模型开始时用了Openwebui，但由于需要在安装时部署嵌入模型，比较麻烦，就改用了使用Streamlit开发的Local Multimodal AI Chat。Local Multimodal AI Chat可以调用Ollama的多模态模型和嵌入模型，虽然有不支持流式响应和运行慢的问题，但由于部署方便还是考虑替换Openwebui。")
 st.write("我目前部署的模型有phi4、MiniCPM v2.6（用于多模态，效果更好的Qwen2 VL 7b目前还不能在Ollama运行）、InternLM2.5 7b（用于长序列）。嵌入模型用了Bge-m3，支持多语言，在嵌入模型中参数量较大，性能也较高。")
