@@ -1,19 +1,14 @@
-# 🎈 Blank app template
+AI-note
 
-A simple Streamlit app template for you to modify!
+本项目使用Streamlit创建，用于记录当前各类AI模型中有优势的模型以及我对AI推理硬件方案的考虑。
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+部署流程
 
-### How to run it on your own machine
+建议使用Python=3.10环境
 
-1. Install the requirements
+1.安装依赖
+pip install -r requirements.txt
 
-   ```
-   $ pip install -r requirements.txt
-   ```
+2.运行应用
 
-2. Run the app
-
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+streamlit run streamlit_app.py
