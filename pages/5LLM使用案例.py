@@ -6,6 +6,7 @@ st.sidebar.write("1.思维链模型解题")
 st.sidebar.write("2.编程")
 st.sidebar.write("3.短文写作")
 st.sidebar.write("4.长文写作")
+st.write("使用LLM查询一些难以使用搜索引擎检索的问题的记录，相关内容发布在：https://william7004-llm-inquiry.streamlit.app ，这里不另作展示。")
 st.subheader("1.思维链模型解题", divider=True)
 st.write("这里使用的模型是Deepseek-R1-Lite-Preview，所有题目回答正确。")
 with open("files/题目1.txt", "r", encoding='utf-8') as f:
