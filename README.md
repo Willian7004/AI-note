@@ -4,6 +4,8 @@ AI-note
 
 本项目已部署到Streamlit CLoud，域名为https://william7004-ai-note.streamlit.app
 
+本项目使用release记录更改，此前每创建新文章都发布release，会导致发布过于频繁。考虑到git具有记录更改的功能，后续改为每月发布release。
+
 本地部署流程
 
 建议使用Python=3.10环境
