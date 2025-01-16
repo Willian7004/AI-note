@@ -47,18 +47,18 @@ df
 st.subheader("2.多模态模型", divider=True)
 st.write("多模态模型开源处理图片。对于非思维链模型，闭源模型中Claude3.5 Sonnet表现最好，开源模型中MiniMax VL01表现最好。对于思维链模型，闭源模型中o1表现最好，开源模型中QvQ 72B Preview表现最好。以下是几个模型的对比")
 df2= pd.DataFrame({
-     "Model": ["QvQ-72B-preview", "OpenAI o1","GPT-4o", "Claude-3.5-Sonnet", "Gemini1.5 Pro", "Gemini2.0 Flash exp", "Qwen2.5VL 72B", "Llama3.2 90B", "MiniMax VL01"],
-    "MMLU": [70.3,77.3,63.5, 72.0, 68.4, 70.6, 64.5, 66.5, 62.1],
-    "MMNU-Pro*": [None,None,54.5, 54.7, 50.9, 57.0, 43.2, 47.3, 36.0],
-    "ChartQA": [None,None,88.1, 90.8, 88.7, 88.3, 91.2, 91.5, 85.5],
-    "DocVQA*": [None,None,91.1, 94.2, 91.5, 92.9, 97.1, 96.1, 90.1],
-    "OCRBench": [None,None,806, 790, 800, 846, 856, 847, 805],
-    "AI2D": [None,None,83.1, 82.0, 80.9, 85.1, 84.4, 86.8, 78.9],
-    "MathVista*": [70.4,71.0,62.1, 65.4, 70.6, 73.1, 69.6, 68.4, 57.3],
-    "OlympiadBench": [20.4,None,25.2, 28.4, 32.1, 46.1, 21.9, 25.1, 19.3],
-    "M-LongDoc": [None,None,41.4, 31.4, 26.2, 31.4, 11.6, 19.7, 13.9],
-    "MEGA-Bench": [None,None,49.4, 51.4, 45.9, 53.9, 46.8, 45.3, 19.9],
-    "In-house Benchmark": [None,None,62.3, 47.0, 49.2, 72.1, 40.6, 34.8, 13.6]
+     "Model": ["QvQ-72B-preview", "OpenAI o1","GPT-4o", "Claude-3.5-Sonnet", "Gemini1.5 Pro", "Gemini2.0 Flash exp", "Qwen2.5VL 72B", "InternVL 2.5 78B", "Llama3.2 90B","MiniMax VL01"],
+    "MMLU": [70.3,77.3,63.5, 72.0, 68.4, 70.6, 64.5, 66.5, 62.1,68.5],
+    "MMNU-Pro*": [None,None,54.5, 54.7, 50.9, 57.0, 43.2, 47.3, 36.0,52.7],
+    "ChartQA": [None,None,88.1, 90.8, 88.7, 88.3, 91.2, 91.5, 85.5,91.7],
+    "DocVQA*": [None,None,91.1, 94.2, 91.5, 92.9, 97.1, 96.1, 90.1,96.4],
+    "OCRBench": [None,None,806, 790, 800, 846, 856, 847, 805,865],
+    "AI2D": [None,None,83.1, 82.0, 80.9, 85.1, 84.4, 86.8, 78.9,83.3],
+    "MathVista*": [70.4,71.0,62.1, 65.4, 70.6, 73.1, 69.6, 68.4, 57.3,68.6],
+    "OlympiadBench": [20.4,None,25.2, 28.4, 32.1, 46.1, 21.9, 25.1, 19.3,24.2],
+    "M-LongDoc": [None,None,41.4, 31.4, 26.2, 31.4, 11.6, 19.7, 13.9,32.5],
+    "MEGA-Bench": [None,None,49.4, 51.4, 45.9, 53.9, 46.8, 45.3, 19.9,47.4],
+    "In-house Benchmark": [None,None,62.3, 47.0, 49.2, 72.1, 40.6, 34.8, 13.6,56.6]
 })
 
 df2
