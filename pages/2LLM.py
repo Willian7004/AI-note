@@ -64,17 +64,19 @@ df2= pd.DataFrame({
 df2
 
 st.subheader("3.思维链模型", divider=True)
-st.write("思维链模型可以通过增加推理步骤来提高性能。目前最优秀的闭源思维链模型是OpenAI o1，最优秀的开源思维链模型是Qwq 32b preview，以下是几个模型的对比（由于不少模型不是同时测试，表中只保留了有较多模型进行的测试，另外使用非思维链模型中表现最好的Deepseek v3作为对照）")
+st.write("思维链模型可以通过增加推理步骤来提高性能。目前最优秀的闭源思维链模型是OpenAI o1，最优秀的开源思维链模型是Deepseek R1，其蒸馏版本在本地部署上有优势。以下是几个模型的对比（由于不少模型不是同时测试，表中只保留了有较多模型进行的测试，另外使用非思维链模型中表现最好的Deepseek v3作为对照）")
 df3= pd.DataFrame({
-     "Model": ["DeepSeek-R1-Lite-Preview","QwQ-32B-Preview","OpenAI o1","o1 mini","o3","o3 mini(high)","Deepseek v3"],
-    "AIME": [52.5,50.0,83.3,63.6,96.7,83.6,39.2],
-    "GPQA Diamond": [58.5,65.2,78.0,60.0,87.7,70.0,59.1],
-    "Codeforces": [1450,None,1891,None,2727,None,None],
-    "LiveCodeBench": [51.6,50.0,None,None,None,None,40.5]
+     "Model": ["DeepSeek-R1","DeepSeek-R1-Distill-Qwen-1.5B","DeepSeek-R1-Distill-Qwen-7B","DeepSeek-R1-Distill-Qwen-14B","DeepSeek-R1-Distill-Qwen-32B","QwQ-32B-Preview","OpenAI o1","o1 mini","o3","o3 mini(high)","Deepseek v3"],
+    "AIME2024": [79.8,28.9,55.5,69.7,72.6,44.0,83.3,63.6,96.7,83.6,39.2],
+    "GPQA Diamond": [71.5,33.8,49.1,59.1,62.1,54.5,78.0,60.0,87.7,70.0,59.1],
+    "Codeforces(rating)": [None,954,1189,1481,1691,1316,1891,1820,2727,None,None],
+     "Codeforces(percentile)": [96.3,None,None,None,90.6,None,96.6,93.4,None,None,58.7],
+    "LiveCodeBench": [None,16.9,37.6,53.1,57.2,41.9,None,53.8,None,None,40.5],
+     "SWE-Bench": [49.2,None,None,None,36.8,None,48.9,41.6,None,None,42.0]
 })
 
 df3
-st.write("表中的OpenAI o3系列只开放了安全测试，还没有正式发布。o3 mini相比o1系列有性价比优势，o3在ARC AGI测试能达到人类水平，但成本高于人工，在EpochAI Frontier Math达到25.2%准确度。")
+st.write("表中的OpenAI o3系列只开放了安全测试，还没有正式发布。o3 mini相比o1系列有性价比优势，o3在ARC AGI测试能达到人类水平，但成本高于人工。目前o3 mini即将发布，但出现o3可能在泄露的Frontier Math数据集训练的消息。")
 
 st.subheader("4.小型化旗舰模型", divider=True)
 st.write("有几个系列的模型在有模型达到GPT4水平后开始小型化并保持性能，其中闭源模型主要有Gemini2.0 Flash和Yi Lighting，开源模型主要有phi4，14b参数量适合在PC部署。")
