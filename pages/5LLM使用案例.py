@@ -22,10 +22,7 @@ with open("files/题目3.txt", "r", encoding='utf-8') as f:
 with st.container(height=240):
     st.write(t3)
 st.subheader("2.编程", divider=True)
-st.write("在开源思维链模型出现后，我暂时没有使用AI模型编程。如果有详细的提示词，非思维链模型可以编写大部分程序，使用思维链模型可以适度精简提示词，但也可能导致程序部分细节不符合预期。以下仓库是我之前使用AI开发的程序，大多使用Deepseek Coder v2，仓库中包含编写对应程序的提示词。")
-st.write("https://github.com/Willian7004/LLM-Code-Tools")
-st.write("https://github.com/Willian7004/LLM-Document-Tools")
-st.write("https://github.com/Willian7004/LLM-novel-writer/tree/v0.9")
+st.write("如果有详细的提示词，非思维链模型可以编写大部分程序，使用思维链模型可以适度精简提示词或改为描述功能。我在https://william7004-homepage.streamlit.app 提及的我的github仓库中包含提示词的为使用LLM辅助编写的程序。大多使用deepseek coder v2及之后的deepseek模型。")
 st.subheader("3.短文写作", divider=True)
 st.write("我部署LLM后经常使用介绍一个地点的指令进行测试，这部分的文章也来源于这项流程。个人感觉Qwen2 72b在写作上比较优秀，后面的模型引入了不少指令数据后反而导致在写作上缺少亮点。")
 with open("files/qwen2底特律.txt", "r", encoding='utf-8') as f:
